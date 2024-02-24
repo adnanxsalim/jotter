@@ -159,7 +159,7 @@ const HomePage = () => {
                             <CardTitle className="text-2xl font-semibold">
                                 {card.planType === PRICING_PLANS.proplan && (
                                     <>
-                                        <div className="hidden dark:block w-full blur-[120px] rounded-full h-32 absolute bg-brand-primaryPurple/80 -z-10 top-0" />
+                                        <div className="hidden dark:block w-[40%] blur-[120px] rounded-full h-32 bg-brand-primaryPurple/80 -z-10 absolute" />
                                         <Image
                                             src={Diamond}
                                             alt="Pro Plan Icon"
