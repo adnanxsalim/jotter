@@ -61,3 +61,16 @@ html,body {
     @apply bg-background text-foreground;
   }
 }
+
+.animate-slide {
+  animation: 45s slide linear infinite;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
