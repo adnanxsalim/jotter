@@ -15,6 +15,13 @@
       "when": 1708773450494,
       "tag": "0001_yummy_betty_ross",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1708791732949,
+      "tag": "0002_flippant_penance",
+      "breakpoints": true
     }
   ]
 }
