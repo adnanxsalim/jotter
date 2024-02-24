@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jotter",
-  description: "jot it down",
+  description: "Personal and collaborative note-taker application",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(db);
+  // console.log(db);
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
