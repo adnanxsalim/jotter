@@ -179,7 +179,7 @@ const HomePage = () => {
                                     <span className="dark:text-washed-purple-800 ml-1">/mo</span>
                                 ) : ('')}
                                 <p className="dark:text-washed-purple-800">{card.description}</p>
-                                <Button variant="default" className="whitespace-nowrap w-full mt-4">
+                                <Button variant="btn-primary" className="whitespace-nowrap w-full mt-4">
                                     {card.planType === PRICING_PLANS.proplan ? 'Go Pro' : 'Get Started'}
                                 </Button>
                             </CardContent>
