@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import db from "@/lib/supabase/db";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
+import { twMerge } from "tailwind-merge";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"]
+});
 
 export const metadata: Metadata = {
   title: "jotter",
@@ -19,7 +23,7 @@ export default function RootLayout({
   console.log(db);
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={twMerge('bg-background', manrope.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
