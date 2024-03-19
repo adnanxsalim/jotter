@@ -5,11 +5,14 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormSchema } from '@/lib/types';
-import { Form, FormControl, FormDescription, FormField, FormItem } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../../../public/logo.svg'
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import Loader from '@/components/Loader';
+import { actionLoginUser } from '@/lib/server-actions/auth-actions';
 
 const LoginPage = () => {
     const router = useRouter();
@@ -24,7 +27,12 @@ const LoginPage = () => {
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (formData) => {
-
+        const { error } = await actionLoginUser(formData);
+        if(error){
+            form.reset();
+            setSubmitError(error.message);
+        }
+        router.replace('/dashboard');
     };
 
     return (
@@ -56,11 +64,35 @@ const LoginPage = () => {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
-                >
-                    
-                </FormField>
+                />
+                <FormField
+                    disabled={isLoading}
+                    control={form.control}
+                    name="password"
+                    render={(field) => (
+                        <FormItem>
+                            <FormControl>
+                                <Input
+                                    type="password"
+                                    placeholder="Password"
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                {submitError && <FormMessage>{submitError}</FormMessage>}
+                <Button type='submit' className="w-full p-6" size="lg" disabled={isLoading}>
+                    {!isLoading ? "Login":<Loader />}
+                </Button>
+                <span className="self-center">
+                    {`Don't have an account?`}
+                    <Link href="/signup" className="text-primary ml-2">Sign Up</Link>
+                </span>
             </form>
         </Form>
     );
