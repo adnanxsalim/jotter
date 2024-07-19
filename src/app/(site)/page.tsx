@@ -81,7 +81,7 @@ const HomePage = () => {
             </div>
         </section>
         <section className="px-4 sm:px-6 flex justify-center items-center flex-col relative">
-            <div className="w-[30%] blur-[120px] rounded-full h-32 absolute bg-brand-primaryPurple/50 -z-10 top-22" />
+            <div className="w-[30%] blur-[120px] rounded-full h-32 absolute bg-jt-blue/50 -z-10 top-22" />
             <TitleSection
                 title="Keep track of your meetings in one place"
                 subheading="Capture your ideas, thoughts and meeting notes in a structured and organized manner"
@@ -126,13 +126,13 @@ const HomePage = () => {
                                             <AvatarFallback>AV</AvatarFallback>
                                         </Avatar>
                                         <div>
-                                            <CardTitle className="text-foreground">{testimonial.name}</CardTitle>
-                                            <CardDescription className="dark:text-washed-purple-800">{testimonial.name.toLocaleLowerCase()}</CardDescription>
+                                            <CardTitle className="text-gray-300">{testimonial.name}</CardTitle>
+                                            <CardDescription className="dark:text-gray-600">{testimonial.name.toLocaleLowerCase()}</CardDescription>
                                         </div>
                                     </div>
                                 }
                                 cardContent={
-                                    <p className="dark:text-washed-purple-800">{testimonial.message}</p>
+                                    <p className="dark:text-gray-500">{testimonial.message}</p>
                                 }
                             >
 
@@ -153,13 +153,13 @@ const HomePage = () => {
                     <CustomCard
                         key={card.planType}
                         className={clsx('w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl', {
-                            'border-brand-primaryPurple/70': card.planType === PRICING_PLANS.proplan,
+                            'border-jt-blue/70': card.planType === PRICING_PLANS.proplan,
                         })}
                         cardHeader={
                             <CardTitle className="text-2xl font-semibold">
                                 {card.planType === PRICING_PLANS.proplan && (
                                     <>
-                                        <div className="hidden dark:block w-[40%] blur-[120px] rounded-full h-32 bg-brand-primaryPurple/80 -z-10 absolute" />
+                                        <div className="hidden dark:block w-[40%] blur-[120px] rounded-full h-32 bg-jt-blue/80 -z-10 absolute" />
                                         <Image
                                             src={Diamond}
                                             alt="Pro Plan Icon"
