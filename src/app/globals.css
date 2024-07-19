@@ -4,6 +4,7 @@
 
 html,body {
   height: 100%;
+  width: 100%;
 }
 
 @layer base {
@@ -14,7 +15,7 @@ html,body {
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 266, 100%, 50%;
+    --primary: 223, 70%, 60%;
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -37,7 +38,7 @@ html,body {
     --card-foreground: 210 20% 98%;
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
-    --primary: 266, 100%, 50%;
+    --primary: 223, 70%, 60%;
     --primary-foreground: 210 20% 98%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
