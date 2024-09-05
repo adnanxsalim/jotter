@@ -1,5 +1,5 @@
 "use client"
-import Loader from '@/components/Loader';
+import Loader from '@/components/global/Loader';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
