@@ -36,7 +36,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
 }) => {
   const { toast } = useToast();
   const router = useRouter();
-  const dispatch = useAppState();
+  const { dispatch } = useAppState();
   const [selectedEmoji, setSelectedEmoji] = useState('💼');
   const supabase = createClientComponentClient();
   const {
@@ -94,7 +94,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
       if (createError) {
         throw new Error();
       }
-      { dispatch }({
+      dispatch({
         type: 'ADD_WORKSPACE',
         payload: { ...newWorkspace, folders: [] },
       });
