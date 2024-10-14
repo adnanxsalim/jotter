@@ -20,7 +20,7 @@ const NativeNavigation:React.FC<NativeNavigationProps> = ({ myWorkspaceId, class
                     href={`/dashboard/${myWorkspaceId}`}
                 >
                     <CypressHomeIcon />
-                    <span>My Worskpace</span>
+                    <span>My Workspace</span>
                 </Link>
             </li>
             <li>
