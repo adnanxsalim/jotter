@@ -331,6 +331,18 @@ const QuillEditor: React.FC<QuillEditorProps> = ({ dirDetails, fileId, dirType }
         }
     }, [quill, socket, fileId, user, details, folderId, workspaceId])
 
+    useEffect(() => {
+        if(socket === null || quill === null) return
+        const socketHandler = (deltas: any, id: string) => {
+            if(id === fileId) {
+                quill.updateContents(deltas)
+            }
+        }
+        return () => {
+            socket.off('receive-changes', socketHandler)
+        }
+    }, [quill, socket, fileId])
+
     return (
         <>
             <div className="relative">
