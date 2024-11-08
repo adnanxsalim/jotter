@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/lib/providers/next-theme-provider";
 import { twMerge } from "tailwind-merge";
 import AppStateProvider from "@/lib/providers/state-providers";
 import { SupabaseUserProvider } from "@/lib/providers/supabase-user-provider";
+import { SocketProvider } from "@/lib/providers/socket-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -33,7 +35,10 @@ export default function RootLayout({
         >
           <AppStateProvider>
             <SupabaseUserProvider>
-              {children}
+              <SocketProvider>
+                {children}
+                <Toaster />
+              </SocketProvider>
             </SupabaseUserProvider>
           </AppStateProvider>
         </ThemeProvider>
