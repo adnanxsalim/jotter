@@ -11,12 +11,11 @@ import { Button } from '../ui/button'
 import { updateFile, updateFolder, updateWorkspace } from '@/lib/supabase/queries'
 
 interface BannerUploadFormProps {
-    details: appWorkspacesType | appFoldersType | File | Workspace | Folder
     dirType: 'workspace' | 'folder' | 'file'
     id: string
 }
 
-const BannerUploadForm: React.FC<BannerUploadFormProps> = ({ details, dirType, id }) => {
+const BannerUploadForm: React.FC<BannerUploadFormProps> = ({ dirType, id }) => {
     const supabase = createClientComponentClient()
     const { state, workspaceId, folderId, dispatch } = useAppState()
     const { register, handleSubmit, reset,

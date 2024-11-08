@@ -9,13 +9,12 @@ interface BannerUploadProps {
     className?: string
     dirType: 'workspace' | 'folder' | 'file'
     id: string
-    details: appWorkspacesType | appFoldersType | File | Workspace | Folder
 }
 
-const BannerUpload: React.FC<BannerUploadProps> = ({ children, className, dirType, id, details }) => {
+const BannerUpload: React.FC<BannerUploadProps> = ({ children, className, dirType, id }) => {
   return (
     <CustomDialogTrigger header="Upload Banner" className={className}
-        content={<BannerUploadForm details={details} dirType={dirType} id={id} />}
+        content={<BannerUploadForm dirType={dirType} id={id} />}
     >{children}</CustomDialogTrigger>
   )
 }
