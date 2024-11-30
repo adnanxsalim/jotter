@@ -27,7 +27,7 @@ const LoginPage = () => {
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (formData) => {
-        const { error } = await actionLoginUser(formData);
+        const {error} = await actionLoginUser(formData);
         if(error){
             form.reset();
             setSubmitError(error.message);
